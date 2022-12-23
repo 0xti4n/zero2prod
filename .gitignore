@@ -1,1 +1,4 @@
 /target
+.env
+Cargo.lock
+sqlx-data.json
