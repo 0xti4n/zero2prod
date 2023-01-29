@@ -1,5 +1,5 @@
 #builder stage
-FROM lukemathwalker/cargo-chef:latest-rust-1.63.0 AS chef
+FROM lukemathwalker/cargo-chef:latest-rust-1.66.0 AS chef
 
 WORKDIR /app
 RUN apt update && apt install lld clang -y
@@ -29,5 +29,3 @@ COPY --from=builder /app/target/release/zero2prod zero2prod
 COPY configuration configuration
 ENV APP_ENVIRONMENT production
 ENTRYPOINT ["./zero2prod"]
-
-#149
