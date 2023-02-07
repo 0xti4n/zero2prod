@@ -41,10 +41,13 @@ services:
         scope: RUN_TIME
         value: ${newsletter.DATABASE}
 
+      - key: APP_DATABASE__BASE_URL
+        scope: RUN_TIME
+        value: ${APP_URL}
+
 databases:
   - engine: PG
     name: newsletter
     num_nodes: 1
     size: db-s-dev-database
     version: "12"
-
