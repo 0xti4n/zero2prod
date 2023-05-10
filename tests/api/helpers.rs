@@ -1,5 +1,5 @@
 use argon2::password_hash::SaltString;
-use argon2::{Argon2, PasswordHasher, Algorithm, Version, Params};
+use argon2::{Algorithm, Argon2, Params, PasswordHasher, Version};
 use once_cell::sync::Lazy;
 use sqlx::{Connection, Executor, PgConnection, PgPool};
 use uuid::Uuid;
@@ -160,7 +160,8 @@ impl TestUser {
             Algorithm::Argon2id,
             Version::V0x13,
             Params::new(15000, 2, 1, None).unwrap(),
-        ).hash_password(self.password.as_bytes(), &salt)
+        )
+        .hash_password(self.password.as_bytes(), &salt)
         .unwrap()
         .to_string();
 
