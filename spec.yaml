@@ -45,6 +45,10 @@ services:
         scope: RUN_TIME
         value: ${APP_URL}
 
+      - key: APP_APPLICATION_HMAC_SECRET
+        scope: RUN_TIME
+        value: ${APP_HMAC_SECRET}
+
 databases:
   - engine: PG
     name: newsletter

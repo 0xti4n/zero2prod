@@ -35,7 +35,12 @@ rand = { version = "0.8.5", features = ["std_rng"] }
 thiserror = "1.0.40"
 anyhow = "1.0.71"
 base64 = "0.21.0"
-argon2 = { versiom = "0.5.0", features = ["std"]}
+argon2 = { version = "0.5.0", features = ["std"]}
+urlencoding = "2.1.2"
+htmlescape = "0.3.1"
+hmac = { version = "0.12.1", features = ["std"]}
+sha2 = "0.10.6"
+hex = "0.4.3"
 
 [dependencies.sqlx]
 version = "0.6.0"
@@ -53,7 +58,7 @@ features = [
 [dependencies.reqwest]
 version = '0.11.14'
 default-features = false
-features = ["json", "rustls-tls"]
+features = ["json", "rustls-tls", "cookies"]
 
 [dev-dependencies]
 fake = "2.5.0"
